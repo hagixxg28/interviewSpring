@@ -26,26 +26,26 @@ public class CommentApi {
 
 	@GetMapping("/{commentId}")
 	public Comment getCompany(@PathVariable long commentId) {
-		return logic.getcomment(commentId);
+		return logic.getComment(commentId);
 	}
 
 	@PostMapping
-	public void createCompany(@RequestBody Comment comment) {
-		logic.createcomment(comment);
+	public long createComment(@RequestBody Comment comment) {
+		return logic.createComment(comment);
 	}
 
 	@PutMapping
-	public void updateCompany(@RequestBody Comment comment) {
-		logic.updatecomment(comment);
+	public void updateComment(@RequestBody Comment comment) {
+		logic.updateComment(comment);
 	}
 
 	@DeleteMapping("/{commentId}")
-	public void removeCompany(@PathVariable long commentId) {
-		logic.removecomment(commentId);
+	public void removeComment(@PathVariable long commentId) {
+		logic.removeComment(commentId);
 	}
 
 	@GetMapping
-	public Collection<Comment> getAllCompanies() {
-		return logic.getAllcomments();
+	public Collection<Comment> getAllComments() {
+		return logic.getAllComments();
 	}
 }

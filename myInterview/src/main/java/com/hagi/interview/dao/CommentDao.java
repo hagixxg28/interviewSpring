@@ -46,7 +46,7 @@ public class CommentDao {
 
 	@Transactional(propagation = Propagation.REQUIRED)
 	public Collection<Comment> getAllComments() {
-		String hql = "FROM comment";
+		String hql = "from com.hagi.interview.beans.Comment";
 		Query query = entityManager.createQuery(hql);
 		Collection<Comment> allComments = query.getResultList();
 		return allComments;

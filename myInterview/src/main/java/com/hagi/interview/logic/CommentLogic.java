@@ -19,23 +19,23 @@ public class CommentLogic {
 		super();
 	}
 
-	public Comment getcomment(long commentId) {
+	public Comment getComment(long commentId) {
 		return dao.readComment(commentId);
 	}
 
-	public long createcomment(Comment comment) {
+	public long createComment(Comment comment) {
 		return dao.createComment(comment);
 	}
 
-	public void updatecomment(Comment comment) {
+	public void updateComment(Comment comment) {
 		dao.updateComment(comment);
 	}
 
-	public void removecomment(long commentId) {
+	public void removeComment(long commentId) {
 		dao.removeComment(commentId);
 	}
 
-	public Collection<Comment> getAllcomments() {
+	public Collection<Comment> getAllComments() {
 		Collection<Comment> list = new ArrayList<>();
 		list = dao.getAllComments();
 		return list;

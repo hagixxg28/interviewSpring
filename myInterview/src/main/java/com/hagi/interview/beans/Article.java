@@ -1,6 +1,7 @@
 package com.hagi.interview.beans;
 
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -11,8 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "article")
@@ -32,8 +31,7 @@ public class Article {
 	private Date startDate;
 
 	@OneToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, mappedBy = "article", fetch = FetchType.EAGER)
-	@JsonIgnore
-	private Collection<Comment> comments;
+	private Collection<Comment> comments = new ArrayList<Comment>();
 
 	public Article() {
 		super();
